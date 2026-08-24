@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>35MM Films · Estudio de Cine, TV y Producción Audiovisual</title>
+<meta name="description" content="Estudio de cine y televisión. Producción de eventos, fotografía profesional, marketing digital y renta de equipos audiovisuales. Tu historia merece ser contada como una película.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000000;--bg-2:#111827;--red:#DC2626;--red-light:#E3001B;
+    --white:#FFFFFF;--gray:#D1D5DB;--gray-soft:#9CA3AF;--border:rgba(255,255,255,.09);
+    --radius:14px;--radius-lg:26px;--maxw:1200px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:var(--gray);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Bebas Neue',system-ui,sans-serif;letter-spacing:.01em;margin:0;color:var(--white);font-weight:400;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:2;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red-light);}
+  .eyebrow::before{content:"";width:24px;height:2px;background:var(--red);display:inline-block;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:8px;font-weight:700;font-size:14.5px;letter-spacing:.02em;cursor:pointer;border:none;transition:transform .22s ease, box-shadow .22s ease;white-space:nowrap;}
+  .btn:hover{transform:scale(1.05);}
+  .btn-wa{background:#25D366;color:#fff;}
+  .btn-wa:hover{box-shadow:0 14px 34px -8px rgba(37,211,102,.55);}
+  .btn-red{background:var(--red);color:#fff;}
+  .btn-red:hover{box-shadow:0 14px 34px -8px rgba(220,38,38,.6);}
+  .btn-outline{background:transparent;color:#fff;border:1.5px solid var(--border);}
+  .btn-outline:hover{border-color:var(--red);}
+  @media(max-width:480px){
+    .btn{white-space:normal;text-align:center;justify-content:center;width:100%;}
+  }
+  section{padding:110px 0;position:relative;}
+  @media(max-width:768px){section{padding:70px 0;}}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.4);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.25s ease;}
+  header.scrolled{background:rgba(0,0,0,.82);border-color:var(--border);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:82px;}
+  .brand{font-family:'Bebas Neue';font-size:24px;letter-spacing:.06em;color:#fff;}
+  .brand span{color:var(--red-light);}
+  .nav-links{display:flex;align-items:center;gap:38px;}
+  .nav-links a{font-size:13.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);opacity:.85;}
+  .nav-links a:hover{opacity:1;color:var(--red-light);}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;}
+  @media(max-width:960px){
+    .nav-links{position:fixed;top:82px;left:0;right:0;background:#000;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--border);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.2s ease;}
+    .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    .nav-links a{width:100%;padding:14px 0;border-bottom:1px solid var(--border);}
+    .nav-cta{display:none;}
+    .burger{display:block;}
+  }
+
+  /* HERO */
+  .hero{
+    padding:200px 0 130px;position:relative;overflow:hidden;text-align:center;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.88) 60%, #000 100%),
+      radial-gradient(ellipse at 50% 15%, rgba(220,38,38,.16), transparent 55%),
+      repeating-linear-gradient(115deg, #0d0d0d 0px, #0d0d0d 2px, #050505 2px, #050505 4px);
+  }
+  .hero-inner{max-width:840px;margin:0 auto;}
+  .hero .eyebrow{justify-content:center;}
+  .hero h1{font-size:clamp(38px,7vw,76px);line-height:1.02;margin:20px 0 24px;}
+  .hero h1 span{color:var(--red-light);}
+  .hero p{font-size:18px;line-height:1.6;color:var(--gray-soft);max-width:600px;margin:0 auto 42px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
+  .film-strip{position:absolute;top:0;left:0;right:0;height:14px;background:repeating-linear-gradient(90deg,#000 0 18px,#DC2626 18px 20px);opacity:.55;}
+  .film-strip.bottom{top:auto;bottom:0;}
+
+  .banner-belt{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:70px 0;text-align:center;}
+  .banner-belt h2{font-size:clamp(24px,4vw,44px);line-height:1.15;max-width:780px;margin:0 auto;}
+  .banner-belt h2 span{color:var(--red-light);}
+
+  .section-head{max-width:660px;margin-bottom:52px;}
+  .section-head.center{margin:0 auto 56px;text-align:center;}
+  .section-head h2{font-size:clamp(30px,4.2vw,48px);line-height:1.1;margin-top:12px;}
+  .section-head h2 span{color:var(--red-light);}
+  .section-head p{color:var(--gray-soft);font-size:16px;line-height:1.6;margin-top:14px;}
+
+  /* SERVICES */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:960px){.cards{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.cards{grid-template-columns:1fr;}}
+  .card{
+    background:linear-gradient(160deg, rgba(255,255,255,.035), rgba(255,255,255,.008));
+    border:1px solid var(--border);border-radius:var(--radius-lg);padding:34px 28px;
+    transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+  }
+  .card:hover{transform:scale(1.04);border-color:rgba(220,38,38,.55);box-shadow:0 18px 44px -14px rgba(220,38,38,.5);}
+  .card-icon{width:54px;height:54px;border-radius:12px;background:rgba(220,38,38,.1);display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
+  .card-icon svg{width:24px;height:24px;stroke:var(--red-light);}
+  .card h3{font-family:'Inter';font-weight:700;font-size:17px;color:#fff;margin-bottom:10px;text-transform:none;}
+  .card p{font-size:14px;color:var(--gray-soft);line-height:1.6;}
+
+  /* REEL / GALLERY */
+  #reel{background:var(--bg-2);}
+  .reel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:768px){.reel-grid{grid-template-columns:repeat(2,1fr);}}
+  .reel-item{
+    aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;position:relative;
+    background:linear-gradient(150deg,#1a1a1a,#050505);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;transition:transform .3s ease;
+  }
+  .reel-item:hover{transform:scale(1.03);}
+  .reel-item::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%, rgba(0,0,0,.7));}
+  .reel-play{position:relative;z-index:2;width:52px;height:52px;border-radius:50%;background:rgba(220,38,38,.9);display:flex;align-items:center;justify-content:center;}
+  .reel-play svg{width:20px;height:20px;fill:#fff;margin-left:3px;}
+  .reel-label{position:absolute;bottom:14px;left:16px;z-index:2;font-size:12.5px;font-weight:600;color:#fff;letter-spacing:.02em;}
+
+  /* EQUIPMENT */
+  .equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media(max-width:900px){.equip-grid{grid-template-columns:repeat(2,1fr);}}
+  .equip-item{padding:26px 22px;border-radius:var(--radius);background:rgba(255,255,255,.02);border:1px solid var(--border);text-align:center;transition:.25s ease;}
+  .equip-item:hover{border-color:rgba(220,38,38,.5);transform:translateY(-4px);}
+  .equip-item svg{width:28px;height:28px;stroke:var(--red-light);margin-bottom:14px;}
+  .equip-item h4{font-family:'Inter';font-weight:700;font-size:14px;color:#fff;text-transform:none;}
+
+  /* CTA */
+  .cta-box{
+    background:linear-gradient(135deg, rgba(220,38,38,.14), rgba(220,38,38,.02));
+    border:1px solid rgba(220,38,38,.35);border-radius:var(--radius-lg);
+    padding:64px 40px;text-align:center;
+  }
+  .cta-box h3{font-size:clamp(28px,4vw,44px);margin-bottom:16px;}
+  .cta-box p{color:var(--gray-soft);font-size:16px;max-width:540px;margin:0 auto 34px;line-height:1.6;}
+
+  /* FOOTER */
+  footer.site{background:#000;border-top:1px solid var(--border);padding:56px 0 26px;}
+  .footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:44px;}
+  .footer-brand{font-family:'Bebas Neue';font-size:26px;color:#fff;letter-spacing:.05em;margin-bottom:12px;}
+  .footer-brand span{color:var(--red-light);}
+  footer.site .footer-top p{font-size:14px;line-height:1.6;color:var(--gray-soft);max-width:320px;}
+  .footer-contact{display:flex;flex-direction:column;gap:12px;font-size:14px;}
+  .footer-contact a{color:var(--gray-soft);}
+  .footer-contact a:hover{color:var(--red-light);}
+  .footer-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:40px;}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#575d6b;}
+  .footer-bottom a{color:#575d6b;}
+
+  .wa-float{
+    position:fixed;bottom:26px;right:26px;z-index:200;width:64px;height:64px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    animation:waPulse 2.4s ease-in-out infinite;
+  }
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+  @keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55);}50%{box-shadow:0 0 0 14px rgba(37,211,102,0);}}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .stagger .reveal:nth-child(1){transition-delay:0s;}
+  .stagger .reveal:nth-child(2){transition-delay:.08s;}
+  .stagger .reveal:nth-child(3){transition-delay:.16s;}
+  .stagger .reveal:nth-child(4){transition-delay:.24s;}
+  .stagger .reveal:nth-child(5){transition-delay:.32s;}
+  .stagger .reveal:nth-child(6){transition-delay:.4s;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    .wa-float{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <nav class="nav wrap">
+    <a href="#inicio" class="brand">35MM <span>FILMS</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#reel">Reel</a>
+      <a href="#equipos">Equipos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="film-strip"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Estudio de Cine &amp; Televisión</span>
+    <h1>Tu historia merece ser contada <span>como una película.</span></h1>
+    <p>Producción audiovisual, circuito cerrado, fotografía profesional y estrategia digital. El equipo correcto, para la historia que quieres contar.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/18097619896?text=Hola%2C%20quiero%20cotizar%20un%20proyecto" class="btn btn-wa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" width="20" height="20"><path fill="currentColor" d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.34.68 4.52 1.86 6.36L4 29l7.83-1.8a11.94 11.94 0 0 0 4.18.76h.01c6.63 0 12.01-5.38 12.01-12.01C28.02 8.38 22.64 3 16.01 3Z"/></svg>
+        Cotizar por WhatsApp
+      </a>
+      <a href="mailto:35mmfilmsrd@gmail.com" class="btn btn-red">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Enviar un Correo
+      </a>
+    </div>
+  </div>
+  <div class="film-strip bottom"></div>
+</section>
+
+<!-- BANNER -->
+<div class="banner-belt">
+  <div class="wrap">
+    <h2 class="reveal in">Un buen video no es casualidad. Es <span>Estrategia + Producción.</span><br>El equipo correcto hace la diferencia.</h2>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">Servicios</span>
+      <h2>Todo lo que necesita <span>tu producción.</span></h2>
+      <p>Del concepto a la pantalla, cubrimos cada etapa con equipo y talento profesional.</p>
+    </div>
+    <div class="cards stagger">
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></div>
+        <h3>Producción para TV y Eventos</h3>
+        <p>Cobertura audiovisual completa para televisión, eventos corporativos y en vivo.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="2" y="7" width="20" height="14" rx="2"/><circle cx="12" cy="14" r="3"/><path d="M6 7 8 3h8l2 4"/></svg></div>
+        <h3>Filmación y Circuito Cerrado</h3>
+        <p>Instalación y transmisión de circuito cerrado con calidad profesional de estudio.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="3" y="7" width="15" height="12" rx="2"/><path d="M18 10.5 22 8v10l-4-2.5"/></svg></div>
+        <h3>Fotografía Profesional</h3>
+        <p>Sesiones fotográficas de alta calidad para marcas, eventos y producciones.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 2v6M12 16v6M4.2 4.2l4.2 4.2M15.6 15.6l4.2 4.2M2 12h6M16 12h6M4.2 19.8l4.2-4.2M15.6 8.4l4.2-4.2"/></svg></div>
+        <h3>Motion Graphics y Tomas Aéreas</h3>
+        <p>Animaciones, gráficos en movimiento y tomas con drone para dar escala a tu proyecto.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M3 11h18M3 15h18M6 19V5M18 19V5"/></svg></div>
+        <h3>Marketing Digital</h3>
+        <p>Estrategia y distribución de contenido audiovisual pensada para convertir.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg></div>
+        <h3>Renta de Equipos Audiovisuales</h3>
+        <p>Cámaras, iluminación y equipo de sonido profesional disponible para tu producción.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REEL -->
+<section id="reel">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">Nuestro Reel</span>
+      <h2>Producciones que <span>hablan por sí solas.</span></h2>
+    </div>
+    <div class="reel-grid stagger">
+      <div class="reel-item reveal"><div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></svg></div><span class="reel-label">Producción TV</span></div>
+      <div class="reel-item reveal"><div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></svg></div><span class="reel-label">Evento en vivo</span></div>
+      <div class="reel-item reveal"><div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></svg></div><span class="reel-label">Fotografía de marca</span></div>
+      <div class="reel-item reveal"><div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></svg></div><span class="reel-label">Toma aérea</span></div>
+      <div class="reel-item reveal"><div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></svg></div><span class="reel-label">Motion graphics</span></div>
+      <div class="reel-item reveal"><div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7L8 5Z"/></svg></div><span class="reel-label">Cobertura corporativa</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPOS -->
+<section id="equipos">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center;">Equipos</span>
+      <h2>Tecnología de <span>nivel profesional.</span></h2>
+    </div>
+    <div class="equip-grid stagger">
+      <div class="equip-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="2" y="7" width="20" height="14" rx="2"/><circle cx="12" cy="14" r="3"/></svg><h4>Cámaras de cine</h4></div>
+      <div class="equip-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg><h4>Iluminación profesional</h4></div>
+      <div class="equip-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 19v3M8 22h8"/><rect x="9" y="1" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1"/></svg><h4>Audio y micrófonos</h4></div>
+      <div class="equip-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 2v6M12 16v6M4.2 4.2l4.2 4.2M15.6 15.6l4.2 4.2M2 12h6M16 12h6M4.2 19.8l4.2-4.2M15.6 8.4l4.2-4.2"/></svg><h4>Drones y estabilizadores</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <span class="eyebrow" style="justify-content:center;">Empecemos tu proyecto</span>
+      <h3 style="margin-top:14px;">Lista, cámara, acción.</h3>
+      <p>Cuéntanos qué historia quieres contar y te preparamos una propuesta a la altura de tu proyecto.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/18097619896?text=Hola%2C%20quiero%20cotizar%20un%20proyecto" class="btn btn-wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" width="20" height="20"><path fill="currentColor" d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.34.68 4.52 1.86 6.36L4 29l7.83-1.8a11.94 11.94 0 0 0 4.18.76h.01c6.63 0 12.01-5.38 12.01-12.01C28.02 8.38 22.64 3 16.01 3Z"/></svg>
+          Cotizar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">35MM <span>FILMS</span></div>
+        <p>Estudio de cine y televisión. Producción de eventos, fotografía profesional, marketing digital y renta de equipos audiovisuales.</p>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:+18097619896">+1 809-761-9896</a>
+        <a href="mailto:35mmfilmsrd@gmail.com">35mmfilmsrd@gmail.com</a>
+        <a href="https://instagram.com/35mmfilmsrd" target="_blank" rel="noopener">@35mmfilmsrd</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>35MM Films © 2026 · Producción Audiovisual</span>
+      <span><a href="#">Aviso legal</a> · <a href="#">Privacidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/18097619896?text=Hola%2C%20quiero%20cotizar%20un%20proyecto" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.34.68 4.52 1.86 6.36L4 29l7.83-1.8a11.94 11.94 0 0 0 4.18.76h.01c6.63 0 12.01-5.38 12.01-12.01C28.02 8.38 22.64 3 16.01 3Zm0 21.86c-1.5 0-2.96-.4-4.24-1.15l-.3-.18-4.65 1.07 1.1-4.53-.2-.31a9.83 9.83 0 0 1-1.53-5.25c0-5.44 4.43-9.87 9.87-9.87 2.64 0 5.12 1.03 6.98 2.9a9.78 9.78 0 0 1 2.89 6.97c0 5.45-4.43 9.88-9.92 9.88Zm5.4-7.4c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.15-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.71 2-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35Z"/></svg>
+</a>
+
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 12));
+
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('.reveal:not(.banner-belt .reveal)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

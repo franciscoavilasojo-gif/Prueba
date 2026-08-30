@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mantenimiento del Hogar BCN · Fontanería, Electricidad y Pintura en Barcelona</title>
+<meta name="description" content="Reparaciones y mantenimiento del hogar en Barcelona. Fontanería, electricidad, pintura y mantenimiento general. Servicio rápido y presupuesto por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#111827;--ink-2:#1F2937;--yellow:#F59E0B;--yellow-light:#FBBF24;
+    --white:#FFFFFF;--bg-soft:#F9FAFB;--gray-soft:#6B7280;--border:#E5E7EB;
+    --green:#25D366;--blue:#2563EB;--radius:14px;--radius-lg:22px;--maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Inter',system-ui,sans-serif;color:var(--ink-2);background:var(--white);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Inter';font-weight:800;letter-spacing:-0.02em;margin:0;color:var(--ink);}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--yellow);}
+  .eyebrow::before{content:"";width:20px;height:3px;background:var(--yellow);display:inline-block;border-radius:2px;}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:10px;font-weight:700;font-size:15.5px;cursor:pointer;border:none;transition:transform .18s ease, box-shadow .18s ease;white-space:nowrap;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-wa{background:var(--green);color:#fff;box-shadow:0 12px 26px -10px rgba(37,211,102,.5);}
+  .btn-wa:hover{box-shadow:0 16px 32px -8px rgba(37,211,102,.6);}
+  .btn-call{background:var(--blue);color:#fff;box-shadow:0 12px 26px -10px rgba(37,99,235,.45);}
+  .btn-call:hover{box-shadow:0 16px 32px -8px rgba(37,99,235,.55);}
+  .btn-dark{background:var(--ink);color:#fff;}
+  @media(max-width:480px){
+    .btn{white-space:normal;text-align:center;justify-content:center;width:100%;}
+  }
+  section{padding:88px 0;}
+  @media(max-width:768px){section{padding:56px 0;}}
+
+  /* TOP BAR */
+  .top-bar{background:var(--yellow);color:var(--ink);text-align:center;padding:10px 16px;font-size:13.5px;font-weight:700;}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:100;background:var(--ink);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:#fff;}
+  .brand-icon{width:38px;height:38px;border-radius:10px;background:rgba(245,158,11,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .brand-icon svg{width:19px;height:19px;stroke:var(--yellow-light);}
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  .nav-links a{font-size:14px;font-weight:600;color:#D1D5DB;}
+  .nav-links a:hover{color:var(--yellow-light);}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;}
+  @media(max-width:900px){
+    .nav-links{position:fixed;top:76px;left:0;right:0;background:var(--ink);flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 20px;border-bottom:1px solid rgba(255,255,255,.1);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.2s ease;}
+    .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    .nav-links a{width:100%;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+    .nav-cta{display:none;}
+    .burger{display:block;}
+  }
+
+  /* HERO */
+  .hero{background:var(--bg-soft);padding:64px 0 76px;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;}
+  @media(max-width:960px){.hero-grid{grid-template-columns:1fr;}}
+  .hero h1{font-size:clamp(28px,4.4vw,44px);line-height:1.15;margin:16px 0 18px;}
+  .hero p{font-size:16.5px;line-height:1.6;color:var(--gray-soft);max-width:520px;margin-bottom:30px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  .hero-visual{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3.3;background:linear-gradient(150deg,var(--ink),var(--ink-2));display:flex;align-items:center;justify-content:center;}
+  .hero-visual svg{width:38%;stroke:rgba(245,158,11,.55);}
+  .hero-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 20%, rgba(245,158,11,.18), transparent 55%);}
+
+  /* TRUST BADGES */
+  .trust{padding:0;}
+  .trust-inner{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;padding:34px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .trust-item{display:flex;align-items:center;gap:12px;min-width:220px;}
+  .trust-icon{width:44px;height:44px;border-radius:12px;background:rgba(245,158,11,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .trust-icon svg{width:20px;height:20px;stroke:var(--yellow);}
+  .trust-item b{display:block;font-size:14.5px;color:var(--ink);}
+  .trust-item span{font-size:12.5px;color:var(--gray-soft);}
+
+  /* SERVICES */
+  #servicios{background:var(--bg-soft);}
+  .section-head{max-width:620px;margin-bottom:44px;}
+  .section-head.center{margin:0 auto 48px;text-align:center;}
+  .section-head h2{font-size:clamp(24px,3.2vw,34px);line-height:1.15;margin-top:12px;}
+  .section-head h2 span{color:var(--yellow);}
+  .section-head p{color:var(--gray-soft);font-size:15.5px;line-height:1.6;margin-top:12px;}
+  .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media(max-width:960px){.service-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.service-grid{grid-template-columns:1fr;}}
+  .service-card{background:#fff;border-radius:var(--radius-lg);padding:30px 24px;border:1px solid var(--border);transition:transform .2s ease, box-shadow .2s ease;}
+  .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px -16px rgba(17,24,39,.2);}
+  .service-icon{width:56px;height:56px;border-radius:14px;background:rgba(245,158,11,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .service-icon svg{width:26px;height:26px;stroke:var(--yellow);}
+  .service-card h3{font-size:16.5px;margin-bottom:8px;}
+  .service-card p{font-size:13.5px;color:var(--gray-soft);line-height:1.6;}
+
+  /* CTA MID */
+  .cta-mid{background:var(--ink);color:#fff;text-align:center;padding:60px 0;}
+  .cta-mid h3{color:#fff;font-size:clamp(22px,3vw,30px);margin-bottom:12px;}
+  .cta-mid p{color:#9CA3AF;font-size:15.5px;max-width:520px;margin:0 auto 28px;line-height:1.6;}
+
+  /* SOBRE NOSOTROS */
+  #sobre{background:var(--white);}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;}}
+  .about-visual{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:1/1;max-width:380px;margin:0 auto;background:linear-gradient(150deg,var(--ink),var(--ink-2));display:flex;align-items:center;justify-content:center;}
+  .about-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%, rgba(245,158,11,.22), transparent 55%);}
+  .about-visual svg{width:36%;stroke:rgba(245,158,11,.55);}
+  .about-copy p{font-size:15.5px;line-height:1.75;color:var(--gray-soft);margin-bottom:16px;}
+  .about-copy p strong{color:var(--ink);font-weight:700;}
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;}
+  @media(max-width:480px){.about-stats{grid-template-columns:1fr 1fr;}}
+  .about-stat{border-top:2px solid var(--yellow);padding-top:12px;}
+  .about-stat b{display:block;font-size:24px;color:var(--ink);}
+  .about-stat span{font-size:12px;color:var(--gray-soft);text-transform:uppercase;letter-spacing:.04em;}
+
+  /* RESEÑAS */
+  #resenas{background:var(--bg-soft);}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:900px){.review-grid{grid-template-columns:1fr;}}
+  .review-card{background:#fff;border-radius:var(--radius-lg);padding:26px 24px;border:1px solid var(--border);}
+  .review-stars{display:flex;gap:3px;margin-bottom:14px;}
+  .review-stars svg{width:15px;height:15px;fill:var(--yellow);stroke:none;}
+  .review-card p{font-size:14px;line-height:1.65;color:var(--ink-2);margin-bottom:18px;}
+  .review-author{display:flex;align-items:center;gap:12px;}
+  .review-avatar{width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;}
+  .review-author div b{display:block;font-size:13.5px;color:var(--ink);}
+  .review-author div span{font-size:12px;color:var(--gray-soft);}
+
+  /* CONTACTO */
+  #contacto-form{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+  .form-card{background:var(--bg-soft);border-radius:var(--radius-lg);padding:34px;border:1px solid var(--border);}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px;}
+  .field input, .field textarea{width:100%;padding:13px 16px;border-radius:10px;border:1.5px solid var(--border);font-family:'Inter';font-size:14.5px;color:var(--ink);background:#fff;}
+  .field input:focus, .field textarea:focus{outline:2px solid var(--yellow);outline-offset:1px;}
+  .field textarea{resize:vertical;min-height:110px;}
+  .contact-info{display:flex;flex-direction:column;gap:18px;}
+  .info-row{display:flex;gap:16px;align-items:flex-start;background:var(--bg-soft);border-radius:var(--radius);padding:20px;border:1px solid var(--border);}
+  .info-icon{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .info-icon svg{width:20px;height:20px;stroke:var(--yellow);}
+  .info-row h4{font-size:14px;color:var(--ink);margin-bottom:3px;}
+  .info-row p, .info-row a{font-size:14px;color:var(--gray-soft);}
+
+  /* FOOTER */
+  footer.site{background:var(--ink);color:#9CA3AF;padding:52px 0 26px;border-top:1px solid rgba(255,255,255,.08);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+  @media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:30px;}}
+  .footer-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:#fff;margin-bottom:14px;}
+  footer.site p{font-size:14px;line-height:1.6;max-width:280px;}
+  footer.site h5{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#fff;margin-bottom:16px;}
+  footer.site ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px;}
+  footer.site ul a{font-size:14px;color:#9CA3AF;}
+  footer.site ul a:hover{color:var(--yellow-light);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#6B7280;}
+  .footer-bottom a{color:#6B7280;}
+
+  /* FLOATING WHATSAPP */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:200;
+    display:flex;align-items:center;gap:10px;
+    background:var(--green);color:#fff;font-weight:700;font-size:14.5px;
+    padding:16px 22px;border-radius:100px;
+    box-shadow:0 16px 34px -10px rgba(37,211,102,.6);
+    animation:waBounce 1.8s ease-in-out infinite;
+  }
+  .wa-float svg{width:26px;height:26px;fill:#fff;flex-shrink:0;}
+  @keyframes waBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  @media(max-width:480px){
+    .wa-float span{display:none;}
+    .wa-float{padding:16px;border-radius:50%;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .wa-float{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">Servicio rápido en Barcelona y alrededores | Pide presupuesto sin compromiso</div>
+
+<header>
+  <nav class="nav wrap">
+    <a href="#inicio" class="brand">
+      <span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4Z"/><path d="m18 6-2 2M20 4l-2 2"/></svg></span>
+      Mantenimiento del Hogar BCN
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre">Sobre nosotros</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#contacto-form">Contacto</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:+34600000000" class="btn btn-call" style="padding:11px 22px;font-size:14px;">Llamar ahora</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Barcelona y alrededores</span>
+      <h1>Reparaciones y Mantenimiento del Hogar en Barcelona.</h1>
+      <p>Expertos en fontanería, electricidad y pintura. Solucionamos tus averías de forma rápida y profesional, con presupuesto claro desde el primer momento.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/34600000000?text=Hola%2C%20necesito%20un%20presupuesto" class="btn btn-wa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" width="20" height="20"><path fill="currentColor" d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.34.68 4.52 1.86 6.36L4 29l7.83-1.8a11.94 11.94 0 0 0 4.18.76h.01c6.63 0 12.01-5.38 12.01-12.01C28.02 8.38 22.64 3 16.01 3Z"/></svg>
+          Pedir Presupuesto por WhatsApp
+        </a>
+        <a href="tel:+34600000000" class="btn btn-call">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Llamar a un técnico
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4Z"/><path d="m18 6-2 2M20 4l-2 2"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<div class="trust">
+  <div class="wrap trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+      <div><b>Respuesta Rápida</b><span>Atendemos tu aviso al momento</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+      <div><b>Presupuesto sin sorpresas</b><span>Claro y sin compromiso</span></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <div><b>Técnicos Profesionales</b><span>Experiencia garantizada</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">Servicios</span>
+      <h2>Todo lo que tu hogar <span>necesita</span>, en un solo aviso.</h2>
+      <p>Cubrimos las averías y trabajos más habituales del hogar, con la misma rapidez y profesionalidad.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 2C9 6 6 10 6 14a6 6 0 0 0 12 0c0-4-3-8-6-12Z"/></svg></div>
+        <h3>Fontanería</h3>
+        <p>Reparación de fugas, grifos y tuberías con solución rápida y duradera.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7Z"/></svg></div>
+        <h3>Electricidad</h3>
+        <p>Averías, enchufes e iluminación, resueltas con total seguridad.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="3" y="3" width="10" height="7" rx="1.5"/><path d="M8 10v4a2 2 0 0 0 2 2h1"/><path d="M13 14h4a2 2 0 0 1 2 2v4"/></svg></div>
+        <h3>Pintura</h3>
+        <p>Interiores, exteriores y retoques con acabado profesional.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4Z"/><path d="m18 6-2 2M20 4l-2 2"/></svg></div>
+        <h3>Mantenimiento General</h3>
+        <p>Arreglos del día a día para que tu hogar esté siempre en orden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA MID -->
+<div class="cta-mid" id="confianza">
+  <div class="wrap">
+    <h3>¿Tienes una avería ahora mismo?</h3>
+    <p>Escríbenos por WhatsApp y te respondemos al momento con disponibilidad y presupuesto.</p>
+    <a href="https://wa.me/34600000000?text=Hola%2C%20tengo%20una%20aver%C3%ADa" class="btn btn-wa" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" width="20" height="20"><path fill="currentColor" d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.34.68 4.52 1.86 6.36L4 29l7.83-1.8a11.94 11.94 0 0 0 4.18.76h.01c6.63 0 12.01-5.38 12.01-12.01C28.02 8.38 22.64 3 16.01 3Z"/></svg>
+      Pedir Presupuesto por WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- SOBRE NOSOTROS -->
+<section id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-visual">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4Z"/><path d="m18 6-2 2M20 4l-2 2"/></svg>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">Sobre nosotros</span>
+      <h2 style="font-size:clamp(24px,3.2vw,34px);margin:14px 0 20px;">Técnicos de confianza en <span style="color:var(--yellow);">Barcelona.</span></h2>
+      <p><strong>Mantenimiento del Hogar BCN</strong> nace para dar solución rápida a las averías del día a día. Somos un equipo de técnicos con experiencia real en fontanería, electricidad, pintura y mantenimiento general.</p>
+      <p>Trabajamos con presupuestos claros desde el primer momento, sin sorpresas ni letra pequeña, y con la agilidad que necesitas cuando algo se estropea en casa.</p>
+      <div class="about-stats">
+        <div class="about-stat"><b>+500</b><span>Avisos atendidos</span></div>
+        <div class="about-stat"><b>&lt;24h</b><span>Tiempo de respuesta</span></div>
+        <div class="about-stat"><b>100%</b><span>Presupuesto claro</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section id="resenas">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">Reseñas</span>
+      <h2>Lo que dicen nuestros <span>clientes.</span></h2>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>"Vinieron el mismo día a arreglar una fuga y quedó perfecto. Precio justo y muy profesionales."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div><b>Cliente particular</b><span>Barcelona</span></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>"Nos cambiaron toda la instalación eléctrica de un cuarto. Rápidos, limpios y explican bien todo."</p>
+        <div class="review-author">
+          <div class="review-avatar">J</div>
+          <div><b>Cliente particular</b><span>Hospitalet</span></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>"Pedí presupuesto por WhatsApp y en minutos ya tenía respuesta. Pintaron el salón en un día."</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div><b>Cliente particular</b><span>Badalona</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO CON FORMULARIO -->
+<section id="contacto-form">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" style="justify-content:center;">Contacto</span>
+      <h2>Cuéntanos qué <span>necesitas.</span></h2>
+    </div>
+    <div class="contact-grid">
+      <form class="form-card" id="contactForm">
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" required placeholder="Tu nombre">
+        </div>
+        <div class="field">
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" required placeholder="Tu teléfono">
+        </div>
+        <div class="field">
+          <label for="message">Mensaje</label>
+          <textarea id="message" required placeholder="Cuéntanos qué necesitas..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center;">Enviar por WhatsApp</button>
+      </form>
+      <div class="contact-info">
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><h4>Ubicación</h4><p>Barcelona y alrededores</p></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+          <div><h4>Teléfono · WhatsApp</h4><a href="tel:+34600000000">600 00 00 00</a></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div><h4>Horario</h4><p>Lunes a Sábado · 8:00–20:00</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site" id="contacto">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6 2 2 6-6a4 4 0 0 0 5.4-5.4Z"/></svg></span>
+          Mantenimiento del Hogar BCN
+        </div>
+        <p>Fontanería, electricidad, pintura y mantenimiento general en Barcelona y alrededores.</p>
+      </div>
+      <div>
+        <h5>Zona de operación</h5>
+        <ul>
+          <li>Barcelona y alrededores</li>
+          <li><a href="tel:+34600000000">600 00 00 00</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Horario</h5>
+        <ul>
+          <li>Lunes a Sábado</li>
+          <li>8:00 – 20:00</li>
+          <li>Urgencias bajo consulta</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Mantenimiento del Hogar BCN © 2026 · Barcelona</span>
+      <span><a href="#">Aviso legal</a> · <a href="#">Privacidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/34600000000?text=Hola%2C%20necesito%20un%20presupuesto" class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.34.68 4.52 1.86 6.36L4 29l7.83-1.8a11.94 11.94 0 0 0 4.18.76h.01c6.63 0 12.01-5.38 12.01-12.01C28.02 8.38 22.64 3 16.01 3Zm0 21.86c-1.5 0-2.96-.4-4.24-1.15l-.3-.18-4.65 1.07 1.1-4.53-.2-.31a9.83 9.83 0 0 1-1.53-5.25c0-5.44 4.43-9.87 9.87-9.87 2.64 0 5.12 1.03 6.98 2.9a9.78 9.78 0 0 1 2.89 6.97c0 5.45-4.43 9.88-9.92 9.88Zm5.4-7.4c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.15-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.71 2-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.35Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const text = `Hola, soy ${name} (Tel: ${phone}). ${message}`;
+    window.open('https://wa.me/34600000000?text=' + encodeURIComponent(text), '_blank');
+  });
+</script>
+</body>
+</html>
